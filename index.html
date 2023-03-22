@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caixa</title>
+</head>
+<body>
+    DIGITE UM VALOR DIVISÍVEL POR 10:
+    <input type="text" id="valor">
+    <button onclick="Sacar();">SACAR</button>
+    <div class="div1" id="div1">    </div>
+       
+</body>
+<script> // javascript - parte da programação
+    function Sacar()
+    {
+        v=valor.value;
+        v=parseInt(v); //conversão para inteiro
+        if (v%10 == 0) // % faz a pergunta se é divisivel por 10
+        {
+            quantnotas = v/10;
+            // estrutura de repetição:
+            // TEM QUE APARECER LA ONDE EU CHAMEI DE DIV1
+            for (x=1; x<=quantnotas; x++)
+            {
+                div1.innerHTML += "<br> <img src= '10reais.jpg' width= '100px'>";
+            }
+            if (v>0)
+            {
+                div1.innerHTML += "<br> VOLTE SEMPRE";
+            }
+           
+            valor.value=0;
+                       
+        }
+        else
+        {
+            alert ("VALOR INCORRETO");
+        }
+    }
+</script>
+</html>
